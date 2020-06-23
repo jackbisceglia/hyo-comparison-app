@@ -7,7 +7,11 @@ from urllib.request import urlopen as uReq
 def GetItem(*name):
     #create a URL
     myUrl           = "https://www.walmart.com/search/?query=" + name[0]
+    newList = []
     for x in name:
+        newList.append(x)
+    newList.pop(0)
+    for x in newList:
         myUrl += "%20" + x
     #opens a connection
     uClient         = uReq(myUrl)
@@ -29,6 +33,7 @@ def GetItem(*name):
     newUrl = "https://www.walmart.com/" + Trial
 
     print(newUrl)
+    print(myUrl)
 
-GetItem("pen","f")
-#x = input()
+GetItem("pen","f","g")
+x = input()
