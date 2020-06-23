@@ -17,6 +17,10 @@ III: Amazon product advertising API
 	Caveat: requires at least 3 items sold over a 180 day period on one amazon affiliate account
 		An AWS key pair has been created, but the API needs an auhtorized affiliate account meeting the
 		previously mentioned credential to be accessed. 
+		
+IV: Scraping
+	multiple methods, urllib3 with headers, urllib.request, and urllib.request with headers all are met with a page meant for catching robots
+	certifi, chardet, idna, requests, and urllib3 are all related to this atempt and may be removed if another solution is found
 
 ////////////////////////////////Ebay/////////////////////////////////////////////////////////////////////
 ebay has an (usually) 1 day waiting period for developer tools
