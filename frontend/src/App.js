@@ -7,10 +7,13 @@ import { Col, Row, Container, Button, FormControl, InputGroup, CardDeck} from 'r
 
 // Component Imports
 import ComparisonCard from './Components/ComparisonCard';
+import Navbar from './Components/NavBar';
 
 
 export default function App() {
   return (
+    <>
+    <Navbar homePage={true}/>
     <Container fluid>
       <Row>
         <br></br>
@@ -18,7 +21,6 @@ export default function App() {
       <Row>
         <Col></Col>
         {/* start header */}
-        <Col><h1><center>Comparison App</center></h1></Col>
         {/* end header */}
         <Col></Col>
       </Row>
@@ -65,6 +67,6 @@ export default function App() {
         <br></br>
       </Row>
     </Container>
-    
+    </>
   );
 };
