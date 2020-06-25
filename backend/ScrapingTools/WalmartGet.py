@@ -5,7 +5,7 @@ from urllib.request import urlopen as uReq
 
 #pass any number of keywords to this function and receive an URL
 def GetItem(*name):
-    print('Debug: Walmart scrape initiated')
+    #print('Debug: Walmart scrape initiated')
     
     #create a URL
     myUrl           = "https://www.walmart.com/search/?query=" + name[0]
@@ -54,10 +54,10 @@ def GetItem(*name):
     newUrl = "https://www.walmart.com/" + urlEnd
 
     #debug prints
-    print('DEBUG: Pricepoint of ' + price.string + ' has been identified by the scrape')
-    print('DEBUG: ' + myUrl + ' has been identified by the scrape')
-    print('DEBUG: ' + TitleLink + ' has been identified by the scrape')
-    print('DEBUG: ' + ImageLink + ' has been identified')
+    #print('DEBUG: Pricepoint of ' + price.string + ' has been identified by the scrape')
+    #print('DEBUG: ' + myUrl + ' has been identified by the scrape')
+    #print('DEBUG: ' + TitleLink + ' has been identified by the scrape')
+    #print('DEBUG: ' + ImageLink + ' has been identified')
 
     #add extracted data to the return array
     ArrayToReturn = []
@@ -65,7 +65,7 @@ def GetItem(*name):
     ArrayToReturn.append('WALMART TITLE: ' + TitleLink)
     ArrayToReturn.append('WALMART URL: ' + newUrl)
     ArrayToReturn.append('WALMART IMAGE URL: ' + ImageLink)
-    print('DEBUG: Walmart item has been added to walmart return array')
+    #print('DEBUG: Walmart item has been added to walmart return array')
 
     return ArrayToReturn
 
