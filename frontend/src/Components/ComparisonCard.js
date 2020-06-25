@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Styles/ComparisonCard.css';
+import '../Styles/comparisonCard.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
