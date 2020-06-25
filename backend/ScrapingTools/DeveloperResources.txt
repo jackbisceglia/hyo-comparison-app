@@ -15,7 +15,7 @@ II: bottlenose API
 
 III: Amazon product advertising API 
 	Caveat: requires at least 3 items sold over a 180 day period on one amazon affiliate account
-		An AWS key pair has been created, but the API needs an auhtorized affiliate account meeting the
+		An AWS key pair has been created, but the API needs an authorized affiliate account meeting the
 		previously mentioned credential to be accessed. 
 		
 IV: Scraping
