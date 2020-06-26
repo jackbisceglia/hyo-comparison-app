@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express();
+const GetScrape = require('./GetScrape');
 
 //TO-DO: collect data based on logged in user for home page,
 //might not need this one
@@ -8,8 +9,12 @@ app.get('/', (req, res) => {
 });
 
 //TO-DO: grab scraped search results using /ScrapingTools
-app.get('/search', (req, res) => {
-
+app.get('/search/:target', (req, res) => {
+    const {target}=req.params;
+    //GetScrape.SearchResults(target);
+    let resul = GetScrape.SearchResults(target);
+    res.send(resul)
+    //res.send('Hello')
 });
 
 //TO-DO: make new user
@@ -30,3 +35,4 @@ app.set('/watched', (req, res) => {
 app.listen(8000, () => {
   console.log('Example app listening on port 8000!')
 });
+
