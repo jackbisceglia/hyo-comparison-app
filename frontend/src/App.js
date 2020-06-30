@@ -44,22 +44,19 @@ export default function App() {
           {/* end enter product bar */}
         </Col>
       </Row>
-
       <Row className="mx-auto pl-5 pr-5">
-            <Col className="text-center pl-5 pr-5 w-100">
-              {itemRequested
-                ?
-                  <CardList />
-                :
-                  <>
-                  <h1 className="text-dark">Welcome to CompareIt!</h1>
-                  <p className="text-primary">Search an item to start comparing</p>
-                  </>
-              }
-            </Col>
+          <Col className="text-center pl-5 pr-5 w-100">
+            {itemRequested
+              ?
+                <CardList />
+              :
+                <>
+                <h1 className="text-dark">Welcome to CompareIt!</h1>
+                <p className="text-primary">Search an item to start comparing</p>
+                </>
+            }
+          </Col>
         </Row>
-
-      
     </Container>
     </>
   );
