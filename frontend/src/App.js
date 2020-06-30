@@ -12,13 +12,34 @@ import Navbar from './Components/NavBar';
 
 export default function App() {
   // State to check to display either CardList or Search Prompt
-  const [itemRequested, setItemRequested] = useState(false)
+  const [itemRequested, setItemRequested] = useState(false);
 
-  // Function for Search Submission
+  // Search Term in search bar -> updated in search bar component
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Item's states
+  const [searchResults, setSearchResults] = useState([]);
+
+  // -------- Item Search Function --------
   const handleSubmit = (e) => {
     e.preventDefault();
-    setItemRequested(true)
+    fetch(`/search/${searchTerm}`)
+    .then(res => res.json())
+    .then(data => {
+
+      
+      // Test return data
+      console.log(data);
+      
+      // UNCOMMENT WHEN SEARCH RESULTS ARE WORKING
+      // setSearchResults(searchResults => [...searchResults, data]);
+
+      setSearchTerm('');
+      // Switch Pages
+      setItemRequested(true);
+    })
   }
+  // -------- Item Search Function --------
 
   return (
     <>
@@ -29,9 +50,14 @@ export default function App() {
           {/* start enter product bar */}
           <InputGroup className="mb-3">
             <FormControl
+              value={searchTerm}
               placeholder="Product Name"
               aria-label="Product Name"
               aria-describedby="basic-addon2"
+              onChange={(event) => {
+                console.log(searchTerm)
+                setSearchTerm(event.target.value)
+              }}
             />
             <InputGroup.Append>
               <Button 
