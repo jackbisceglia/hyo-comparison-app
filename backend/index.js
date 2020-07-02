@@ -11,10 +11,8 @@ app.get('/', (req, res) => {
 //TO-DO: grab scraped search results using /ScrapingTools
 app.get('/search/:target', (req, res) => {
     const {target}=req.params;
-    //GetScrape.SearchResults(target);
     let resul = GetScrape.SearchResults(target);
     res.send(resul)
-    //res.send('Hello')
 });
 
 //TO-DO: make new user
