@@ -1,3 +1,18 @@
+Making an API call Get(Search:Target) to the index.js of the backend returns an array of products scraped from ebay and amazon.
+
+Index.js calls the searchResults function of GetScrape.js with argument "target"
+GetScrape uses shelljs to execute RunScrape.sh's function 'func' with argument "target"
+RunScrape calls Python Module ArgFilter's main function with argument "target"
+ArgFilter Calls ItemScraper with Arguments seperated by commas.
+ItemScraper calls ebayscrape and walmart scrape with appropriate argument
+
+eScrape and wScrape return an array to ItemScraper
+ItemScraper combines these arrays and returns to ArgFilter
+ArgFilter prints the array
+RunScraper catches the print, and this is returned to GetScrape, which returns it to index.js
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 https://stackoverflow.com/questions/23450534/how-to-call-a-python-function-from-node-js
 
 ////////////////////////////////////////////////////////////////Amazon////////////////////////////////////

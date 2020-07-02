@@ -8,7 +8,7 @@ AppID = 'BaileyBr-HYOCompa-PRD-0c8ee5144-1fd5c6c4'
 
 #returns cheapest buy it now item from ebay 
 def GetItem(name):
-    print('DEBUG: Ebay scrape initiated')
+    #print('DEBUG: Ebay scrape initiated')
     api = finding(appid = AppID, config_file=None)
     api_request = {'keywords' :name, 'outputSelectyor': 'SellerInfo'}
     response = api.execute('findItemsByKeywords', api_request)
@@ -16,7 +16,7 @@ def GetItem(name):
     totalentries = int(soupx.find('totalentries').text)
     items = soupx.find_all('item')
     
-    print('DEBUG: Ebay finding instant purchase items')
+    #print('DEBUG: Ebay finding instant purchase items')
     #add items flagged buy it now to our list 
     AppropriateMatches = []
     for item in items:
@@ -25,7 +25,7 @@ def GetItem(name):
         if(listingtype == 'fixedprice' or listingtype == 'storeinventory'):
             AppropriateMatches.append(item)
 
-    print('DEBUG: Ebay finding lowest price point')
+    #print('DEBUG: Ebay finding lowest price point')
     #find the lowest price point among all buy it now items
     lowestprice = float(AppropriateMatches[0].currentprice.string)
     for item in AppropriateMatches:
@@ -33,17 +33,17 @@ def GetItem(name):
         if(price < lowestprice):
             lowestprice = price
 
-    print('DEBUG: Ebay singling out first cheapest item')
+    #print('DEBUG: Ebay singling out first cheapest item')
     #create a list of items at the lowest price point
     LowestPricedItems = []
     for item in AppropriateMatches:
         if (float(item.currentprice.string) == lowestprice):
             LowestPricedItems.append(item)
 
-    print('DEBUG: Ebay printing cheapest item detrails')
+    #print('DEBUG: Ebay printing cheapest item detrails')
     #print out first found lowest priced item
-    print(lowestprice)
-    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    #print(lowestprice)
+    #print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     cat = LowestPricedItems[0].categoryname.string.lower()
     title = LowestPricedItems[0].title.string.lower().strip()
     price = LowestPricedItems[0].currentprice.string
@@ -51,13 +51,13 @@ def GetItem(name):
     #seller = LowestPricedItems[0].sellerusername.string.lower()
     listingtype = LowestPricedItems[0].listingtype.string.lower()
     condition = LowestPricedItems[0].conditiondisplayname.string.lower()
-    print(cat)
-    print(title)
-    print(price)
-    print(url)
+    #print(cat)
+    #print(title)
+    #print(price)
+    #print(url)
     #print(seller)
-    print('DEBUG' + listingtype)
-    print(condition)
+    #print('DEBUG' + listingtype)
+    #print(condition)
 
     
     #add extracted data to return array

@@ -1,0 +1,8 @@
+.cardcustom {
+    transition: .25s;
+    cursor: pointer;
+}
+
+.cardcustom:hover{
+    border: 1px solid #3FE0FD;
+}
