@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import { Button, Form, Card, Col, Row} from "react-bootstrap";
+import {
+    BrowserRouter as Router,
+    Link,
+    Route,
+    LinkContainer,
+    Switch
+  } from "react-router-dom";
 
 export default function SignUp() {
 
@@ -20,7 +27,7 @@ export default function SignUp() {
                 <Col>
                 </Col>
                 <Col>
-                    <Card classname="my-auto">
+                    <Card className="login-custom">
                     <Card.Body>
                     <Card.Title>
                         Sign Up
@@ -41,9 +48,11 @@ export default function SignUp() {
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password" placeholder="Confirm Password" />
                     </Form.Group>
-                    <Button variant="outline-secondary">
-                        Back
-                    </Button> {' '} {' '}
+                    <Link to="/">
+                        <Button variant="outline-secondary">
+                            Back
+                        </Button>
+                    </Link> {' '} {' '}
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, Form, Card, Row, Col} from "react-bootstrap";
+import Home from './Home'
 import {
     BrowserRouter as Router,
     Link,
     Route,
-    LinkContainer
+    LinkContainer,
+    Switch
   } from "react-router-dom";
 
 export default function LogIn(){
@@ -22,12 +24,12 @@ export default function LogIn(){
     }  
 
         return (
-            <Router>
+            
             <Row>
                 <Col>
                 </Col>
                 <Col>
-                    <Card classname="my-auto">
+                    <Card className="login-custom">
                         <Card.Body>
                             <Card.Title>
                                 Log In
@@ -44,9 +46,13 @@ export default function LogIn(){
                         <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Remember me" />
                         </Form.Group>
-                        <Button variant="outline-secondary" to="/">
-                            Back
-                        </Button>
+
+                        <Link to="/">
+                            <Button variant="outline-secondary">
+                                Back
+                            </Button>
+                        </Link>
+
                          {' '} {' '}
                         <Button variant="primary" type="submit">
                             Submit
@@ -58,7 +64,6 @@ export default function LogIn(){
                 <Col>
                 </Col>
             </Row>
-            </Router>
-            
+
         );
     }
