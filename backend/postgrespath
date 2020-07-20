@@ -3,3 +3,5 @@ PATH=/usr/sbin:$PATH
 sudo su postgres
 
 psql
+
+sudo service postgresql restart
